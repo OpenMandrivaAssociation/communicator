@@ -6,17 +6,19 @@ Summary: Contacts is a small, lightweight addressbook.
 Name: %{name}
 Version: %{version}
 Release: %{release}
-Source0: %{name}-%{version}.tar.bz2
+Source0: http://pimlico-project.org/sources/contacts/%{name}-%{version}.tar.bz2
 License: GPL
 Group: Graphical desktop/GNOME
-Url: http://projects.o-hand.com/tasks
+Url: http://pimlico-project.org/contacts.html
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: libedataserver-devel
 BuildRequires: libgtk+2-devel
 BuildRequires: desktop-file-utils
 
 %description
-Contacts is a small, lightweight addressbook.
+Contacts is a small, lightweight addressbook that uses libebook, part of EDS.
+This is the same library that GNOME Evolution uses, so all contact data that
+exists in your Evolution addressbook is accessible via Contacts.
 
 %prep
 %setup -q
