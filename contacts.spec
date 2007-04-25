@@ -1,5 +1,5 @@
 %define name contacts
-%define version 0.3
+%define version 0.5
 %define release %mkrel 1
 
 Summary: Contacts is a small, lightweight addressbook.
