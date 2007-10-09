@@ -2,7 +2,7 @@
 %define version 0.5
 %define release %mkrel 1
 
-Summary: Contacts is a small, lightweight addressbook.
+Summary: Contacts is a small, lightweight addressbook
 Name: %{name}
 Version: %{version}
 Release: %{release}
