@@ -7,6 +7,7 @@ Name: %{name}
 Version: %{version}
 Release: %{release}
 Source0: http://pimlico-project.org/sources/contacts/%{name}-%{version}.tar.bz2
+Patch0:  contacts-0.5-fix-build.patch
 License: GPL
 Group: Graphical desktop/GNOME
 Url: http://pimlico-project.org/contacts.html
@@ -22,6 +23,7 @@ exists in your Evolution addressbook is accessible via Contacts.
 
 %prep
 %setup -q
+%patch0 -p0
 
 %build
 %configure2_5x
