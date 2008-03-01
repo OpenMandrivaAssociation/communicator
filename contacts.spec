@@ -1,6 +1,6 @@
 %define name contacts
-%define version 0.5
-%define release %mkrel 2
+%define version 0.8
+%define release %mkrel 1
 
 Summary: Small, lightweight addressbook
 Name: %{name}
@@ -66,7 +66,9 @@ rm -rf $RPM_BUILD_ROOT
 %_bindir/%{name}
 %_datadir/applications/%{name}.desktop
 %_mandir/man1/*
-%_datadir/pixmaps/oh-contacts.png
+%_iconsdir/*/*/apps/*.png
+%_iconsdir/*/*/apps/*.svg
+
 %lang(all) %{_datadir}/locale/*/LC_MESSAGES/*
 
 
