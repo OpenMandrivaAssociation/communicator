@@ -44,17 +44,21 @@ $RPM_BUILD_ROOT%{_datadir}/applications/*
 
 %define schemas %name
 
+%if %mdkversion < 200900
 %post
 %update_icon_cache hicolor
 %update_menus
 %post_install_gconf_schemas %{schemas}
+%endif
 
 %preun
 %preun_uninstall_gconf_schemas %{schemas}
 
+%if %mdkversion < 200900
 %postun
 %clean_icon_cache hicolor
 %clean_menus
+%endif
 
 %clean
 rm -rf $RPM_BUILD_ROOT
