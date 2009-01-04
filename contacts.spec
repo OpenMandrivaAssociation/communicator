@@ -1,5 +1,5 @@
 %define name contacts
-%define version 0.8
+%define version 0.9
 %define release %mkrel 1
 
 Summary: Small, lightweight addressbook
@@ -7,7 +7,7 @@ Name: %{name}
 Version: %{version}
 Release: %{release}
 Source0: http://pimlico-project.org/sources/contacts/%{name}-%{version}.tar.bz2
-Patch0:  contacts-0.5-fix-build.patch
+Patch0: 01_contacts-fi-error-in-callback.patch
 License: GPL
 Group: Graphical desktop/GNOME
 Url: http://pimlico-project.org/contacts.html
@@ -65,7 +65,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %name.lang
 %defattr(-,root,root)
-%doc README AUTHORS ChangeLog 
+%doc README AUTHORS ChangeLog
 %_sysconfdir/gconf/schemas/
 %_bindir/%{name}
 %_datadir/applications/%{name}.desktop
