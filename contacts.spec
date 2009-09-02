@@ -13,7 +13,7 @@ Group: Graphical desktop/GNOME
 Url: http://pimlico-project.org/contacts.html
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: libedataserver-devel
-BuildRequires: libgtk+2-devel
+BuildRequires: libgtk+2-devel intltool
 BuildRequires: desktop-file-utils
 
 %description
