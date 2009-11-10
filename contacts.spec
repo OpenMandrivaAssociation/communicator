@@ -1,14 +1,14 @@
 %define name contacts
-%define version 0.9
-%define release %mkrel 2
+%define version 0.11
+%define release %mkrel 1
 
 Summary: Small, lightweight addressbook
 Name: %{name}
 Version: %{version}
 Release: %{release}
-Source0: http://pimlico-project.org/sources/contacts/%{name}-%{version}.tar.bz2
-Patch0: 01_contacts-fi-error-in-callback.patch
-License: GPL
+Source0: http://ftp.gnome.org/pub/GNOME/sources/%{name}-%{version}.tar.bz2
+Patch0: callbacks-0.11-fix-format-strings
+License: GPLv2+
 Group: Graphical desktop/GNOME
 Url: http://pimlico-project.org/contacts.html
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -23,7 +23,7 @@ exists in your Evolution addressbook is accessible via Contacts.
 
 %prep
 %setup -q
-%patch0 -p0
+%patch0 -p1
 
 %build
 %configure2_5x
