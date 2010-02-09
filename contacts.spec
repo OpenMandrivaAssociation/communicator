@@ -1,20 +1,20 @@
-%define name contacts
-%define version 0.11
-%define release %mkrel 1
+%define	name	contacts
+%define	version	0.11
+%define	release	%mkrel 2
 
-Summary: Small, lightweight addressbook
-Name: %{name}
-Version: %{version}
-Release: %{release}
-Source0: http://ftp.gnome.org/pub/GNOME/sources/%{name}-%{version}.tar.bz2
-Patch0: callbacks-0.11-fix-format-strings
-License: GPLv2+
-Group: Graphical desktop/GNOME
-Url: http://pimlico-project.org/contacts.html
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: libedataserver-devel
-BuildRequires: libgtk+2-devel intltool gnome-vfs2-devel
-BuildRequires: desktop-file-utils
+Summary:	Small, lightweight addressbook
+Name:		%{name}
+Version:	%{version}
+Release:	%{release}
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/contacts/%{version}/%{name}-%{version}.tar.bz2
+Patch0:		contacts-0.11-fix-str-fmt.patch
+License:	GPLv2+
+Group:		Graphical desktop/GNOME
+Url:		http://pimlico-project.org/contacts.html
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+BuildRequires:	libedataserver-devel
+BuildRequires:	libgtk+2-devel intltool gnome-vfs2-devel
+BuildRequires:	desktop-file-utils
 
 %description
 Contacts is a small, lightweight addressbook that uses libebook, part of EDS.
@@ -23,7 +23,7 @@ exists in your Evolution addressbook is accessible via Contacts.
 
 %prep
 %setup -q
-%patch0 -p1
+%patch0 -p0
 
 %build
 %configure2_5x
