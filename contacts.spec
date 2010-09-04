@@ -1,6 +1,6 @@
 %define	name	contacts
 %define	version	0.12
-%define	release	%mkrel 1
+%define	release	%mkrel 2
 
 Summary:	Small, lightweight addressbook
 Name:		%{name}
@@ -15,7 +15,6 @@ Url:		http://pimlico-project.org/contacts.html
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	libedataserver-devel
 BuildRequires:	libgtk+2-devel intltool gnome-vfs2-devel
-BuildRequires:	desktop-file-utils
 
 %description
 Contacts is a small, lightweight addressbook that uses libebook, part of EDS.
@@ -35,14 +34,6 @@ exists in your Evolution addressbook is accessible via Contacts.
 rm -rf $RPM_BUILD_ROOT
 %makeinstall_std
 %find_lang %name
-
-desktop-file-install --vendor="" \
-  --add-category="X-MandrivaLinux-Office-Accessories" \
-  --remove-category="Application" \
-  --remove-category="Office" \
-  --remove-category="Project Management" \
-  --dir $RPM_BUILD_ROOT%{_datadir}/applications \
-$RPM_BUILD_ROOT%{_datadir}/applications/*
 
 %define schemas %name
 
