@@ -1,6 +1,6 @@
 %define	name	contacts
-%define	version	0.11
-%define	release	%mkrel 2
+%define	version	0.12
+%define	release	%mkrel 1
 
 Summary:	Small, lightweight addressbook
 Name:		%{name}
@@ -8,6 +8,7 @@ Version:	%{version}
 Release:	%{release}
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/contacts/%{version}/%{name}-%{version}.tar.bz2
 Patch0:		contacts-0.11-fix-str-fmt.patch
+Patch1:		contacts-0.12-fix-build.patch
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
 Url:		http://pimlico-project.org/contacts.html
@@ -24,6 +25,7 @@ exists in your Evolution addressbook is accessible via Contacts.
 %prep
 %setup -q
 %patch0 -p0
+%patch1 -p0
 
 %build
 %configure2_5x
