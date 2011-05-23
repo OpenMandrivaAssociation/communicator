@@ -1,6 +1,6 @@
 %define	name	contacts
 %define	version	0.12
-%define	release	%mkrel 2
+%define	release	%mkrel 3
 
 Summary:	Small, lightweight addressbook
 Name:		%{name}
