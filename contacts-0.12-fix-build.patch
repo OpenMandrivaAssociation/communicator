@@ -1,0 +1,19 @@
+--- Makefile.am.gnu	2010-09-04 14:57:22.000000000 +0200
++++ Makefile.am	2010-09-04 14:57:33.000000000 +0200
+@@ -11,4 +11,4 @@
+ MAINTAINERCLEANFILES = aclocal.m4 compile config.guess config.sub configure depcomp $(INTLTOOL_BUILT:=.in) install-sh ltmain.sh mkinstalldirs Makefile.in missing
+ 
+ snapshot:
+-        $(MAKE) dist distdir=$(PACKAGE)-snap`date +"%Y%m%d"`
++	$(MAKE) dist distdir=$(PACKAGE)-snap`date +"%Y%m%d"`
+--- Makefile.in.gnu	2010-09-04 14:57:39.000000000 +0200
++++ Makefile.in	2010-09-04 14:57:50.000000000 +0200
+@@ -739,7 +739,7 @@
+ 
+ 
+ snapshot:
+-        $(MAKE) dist distdir=$(PACKAGE)-snap`date +"%Y%m%d"`
++	$(MAKE) dist distdir=$(PACKAGE)-snap`date +"%Y%m%d"`
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
