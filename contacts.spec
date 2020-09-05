@@ -1,71 +1,47 @@
-%define	name	contacts
-%define	version	0.12
-%define	release	%mkrel 3
-
-Summary:	Small, lightweight addressbook
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/contacts/%{version}/%{name}-%{version}.tar.bz2
-Patch0:		contacts-0.11-fix-str-fmt.patch
-Patch1:		contacts-0.12-fix-build.patch
-License:	GPLv2+
-Group:		Graphical desktop/GNOME
-Url:		http://pimlico-project.org/contacts.html
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires:	libedataserver-devel
-BuildRequires:	libgtk+2-devel intltool gnome-vfs2-devel
+Name:		contacts
+Version:	1.1.1
+Release:	1
+Source0:	https://invent.kde.org/maui/communicator/-/archive/v%{version}/communicator-v%{version}.tar.bz2
+Group:		Applications/Productivity
+Summary:	Contact management for Plasma Mobile
+License:	GPLv3
+BuildRequires:	ninja
+BuildRequires:	cmake(ECM)
+BuildRequires:	cmake(MauiKit)
+BuildRequires:	cmake(Qt5Qml)
+BuildRequires:	cmake(Qt5Quick)
+BuildRequires:	cmake(Qt5Sql)
+BuildRequires:	cmake(Qt5Svg)
+BuildRequires:	cmake(Qt5QuickControls2)
+BuildRequires:	cmake(Qt5Widgets)
+BuildRequires:	cmake(Qt5Concurrent)
+BuildRequires:	cmake(KF5I18n)
+BuildRequires:	cmake(KF5Notifications)
+BuildRequires:	cmake(KF5Config)
+BuildRequires:	cmake(KF5KIO)
+BuildRequires:	cmake(KF5Attica)
+BuildRequires:	cmake(KF5Contacts)
+BuildRequires:	cmake(KF5People)
+BuildRequires:	cmake(KF5SyntaxHighlighting)
+BuildRequires:	cmake(Qt5WebEngine)
+BuildRequires:	cmake(PhoneNumber)
+BuildRequires:	%{_lib}phonenumber-devel
 
 %description
-Contacts is a small, lightweight addressbook that uses libebook, part of EDS.
-This is the same library that GNOME Evolution uses, so all contact data that
-exists in your Evolution addressbook is accessible via Contacts.
+Contact management for Plasma Mobile
 
 %prep
-%setup -q
-%patch0 -p0
-%patch1 -p0
+%autosetup -p1 -n communicator-v%{version}
+%cmake_kde5
 
 %build
-%configure2_5x
-%make
+%ninja_build -C build
 
 %install
-rm -rf $RPM_BUILD_ROOT
-%makeinstall_std
-%find_lang %name
+%ninja_install -C build
 
-%define schemas %name
-
-%if %mdkversion < 200900
-%post
-%update_icon_cache hicolor
-%update_menus
-%post_install_gconf_schemas %{schemas}
-%endif
-
-%preun
-%preun_uninstall_gconf_schemas %{schemas}
-
-%if %mdkversion < 200900
-%postun
-%clean_icon_cache hicolor
-%clean_menus
-%endif
-
-%clean
-rm -rf $RPM_BUILD_ROOT
-
-%files -f %name.lang
-%defattr(-,root,root)
-%doc README AUTHORS ChangeLog
-%_sysconfdir/gconf/schemas/
-%_bindir/%{name}
-%_datadir/applications/%{name}.desktop
-%_mandir/man1/*
-%_iconsdir/*/*/apps/*.png
-%_iconsdir/*/*/apps/*.svg
-
-%lang(all) %{_datadir}/locale/*/LC_MESSAGES/*
-
-
+%files
+%{_bindir}/contacts
+%{_datadir}/applications/org.kde.contacts.desktop
+%{_datadir}/icons/hicolor/scalable/apps/contacts.svg
+%{_datadir}/maui-accounts
