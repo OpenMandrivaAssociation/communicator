@@ -1,6 +1,6 @@
 Name:		contacts
 Version:	1.1.1
-Release:	1
+Release:	2
 Source0:	https://invent.kde.org/maui/communicator/-/archive/v%{version}/communicator-v%{version}.tar.bz2
 Group:		Applications/Productivity
 Summary:	Contact management for Plasma Mobile
@@ -39,6 +39,7 @@ Contact management for Plasma Mobile
 
 %install
 %ninja_install -C build
+sed -i -e 's,Icon=maui-contacts,Icon=contacts,g' %{buildroot}%{_datadir}/applications/org.kde.contacts.desktop
 
 %files
 %{_bindir}/contacts
