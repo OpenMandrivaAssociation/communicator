@@ -1,9 +1,9 @@
-Name:		contacts
+Name:		communicator
 Version:	1.2.1
 Release:	1
 Source0:	https://invent.kde.org/maui/communicator/-/archive/v%{version}/communicator-v%{version}.tar.bz2
 Group:		Applications/Productivity
-Summary:	Contact management for Plasma Mobile
+Summary:	Communicator management for Plasma Mobile
 License:	GPLv3
 BuildRequires:	ninja
 BuildRequires:	cmake(ECM)
@@ -27,10 +27,12 @@ BuildRequires:	cmake(Qt5WebEngine)
 BuildRequires:	cmake(PhoneNumber)
 BuildRequires:	%{_lib}phonenumber-devel
 
-Provides:   communicator
+Provides:   contacts = %{version}-%{release}
+
+Obsoletes:  contacts <= 1.1.2-2
 
 %description
-Contact management for Plasma Mobile
+Communicator management for Plasma Mobile
 
 %prep
 %autosetup -p1 -n communicator-v%{version}
@@ -41,7 +43,7 @@ Contact management for Plasma Mobile
 
 %install
 %ninja_install -C build
-sed -i -e 's,Icon=maui-contacts,Icon=communicator,g' %{buildroot}%{_datadir}/applications/org.maui.communicator.desktop
+sed -i -e 's,Icon=maui-communicator,Icon=communicator,g' %{buildroot}%{_datadir}/applications/org.maui.communicator.desktop
 
 %files
 %{_bindir}/communicator
