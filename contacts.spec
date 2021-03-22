@@ -41,7 +41,7 @@ Contact management for Plasma Mobile
 
 %install
 %ninja_install -C build
-sed -i -e 's,Icon=maui-contacts,Icon=contacts,g' %{buildroot}%{_datadir}/applications/org.kde.contacts.desktop
+#sed -i -e 's,Icon=maui-contacts,Icon=contacts,g' %{buildroot}%{_datadir}/applications/org.kde.contacts.desktop
 
 %files
 %{_bindir}/contacts
