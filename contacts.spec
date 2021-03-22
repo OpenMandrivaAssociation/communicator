@@ -1,6 +1,6 @@
 Name:		contacts
-Version:	1.1.1
-Release:	2
+Version:	1.2.1
+Release:	1
 Source0:	https://invent.kde.org/maui/communicator/-/archive/v%{version}/communicator-v%{version}.tar.bz2
 Group:		Applications/Productivity
 Summary:	Contact management for Plasma Mobile
@@ -26,6 +26,8 @@ BuildRequires:	cmake(KF5SyntaxHighlighting)
 BuildRequires:	cmake(Qt5WebEngine)
 BuildRequires:	cmake(PhoneNumber)
 BuildRequires:	%{_lib}phonenumber-devel
+
+Provides:   communicator
 
 %description
 Contact management for Plasma Mobile
