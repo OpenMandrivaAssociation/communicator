@@ -44,7 +44,7 @@ Contact management for Plasma Mobile
 #sed -i -e 's,Icon=maui-contacts,Icon=contacts,g' %{buildroot}%{_datadir}/applications/org.kde.contacts.desktop
 
 %files
-%{_bindir}/contacts
-%{_datadir}/applications/org.kde.contacts.desktop
-%{_datadir}/icons/hicolor/scalable/apps/contacts.svg
+%{_bindir}/communicator
+%{_datadir}/applications/org.maui.communicator.desktop
+%{_datadir}/icons/hicolor/scalable/apps/communicator.svg
 %{_datadir}/maui-accounts
