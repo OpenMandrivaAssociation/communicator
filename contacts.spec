@@ -1,7 +1,7 @@
 Name:		communicator
-Version:	1.2.1
+Version:	2.1.0
 Release:	1
-Source0:	https://invent.kde.org/maui/communicator/-/archive/v%{version}/communicator-v%{version}.tar.bz2
+Source0:	https://invent.kde.org/maui/communicator/-/archive/%{version}/communicator-%{version}.tar.xz
 Group:		Applications/Productivity
 Summary:	Communicator management for Plasma Mobile
 License:	GPLv3
@@ -35,7 +35,7 @@ Obsoletes:  contacts <= 1.1.2-2
 Communicator management for Plasma Mobile
 
 %prep
-%autosetup -p1 -n communicator-v%{version}
+%autosetup -p1 -n communicator-%{version}
 %cmake_kde5
 
 %build
@@ -43,10 +43,10 @@ Communicator management for Plasma Mobile
 
 %install
 %ninja_install -C build
-sed -i -e 's,Icon=maui-communicator,Icon=communicator,g' %{buildroot}%{_datadir}/applications/org.maui.communicator.desktop
+#sed -i -e 's,Icon=maui-communicator,Icon=communicator,g' %{buildroot}%{_datadir}/applications/org.maui.communicator.desktop
 
 %files
 %{_bindir}/communicator
-%{_datadir}/applications/org.maui.communicator.desktop
+%{_datadir}/applications/org.kde.communicator.desktop
 %{_datadir}/icons/hicolor/scalable/apps/communicator.svg
 %{_datadir}/maui-accounts
