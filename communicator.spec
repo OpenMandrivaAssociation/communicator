@@ -1,7 +1,9 @@
+%define snapshot 20220107
+
 Name:		communicator
-Version:	2.1.0
-Release:	1
-Source0:	https://invent.kde.org/maui/communicator/-/archive/%{version}/communicator-%{version}.tar.xz
+Version:	2.1.1
+Release:	%{?snapshot:0.%{snapshot}.}1
+Source0:	https://invent.kde.org/maui/communicator/-/archive/%{?snapshot:master}%{!?snapshot:%{version}}/communicator-%{?snapshot:master}%{!?snapshot:%{version}}.tar.bz2%{?snapshot:#/communicator-%{snapshot}.tar.bz2}
 Group:		Applications/Productivity
 Summary:	Communicator management for Plasma Mobile
 License:	GPLv3
@@ -35,7 +37,7 @@ Obsoletes:  contacts <= 1.1.2-2
 Communicator management for Plasma Mobile
 
 %prep
-%autosetup -p1 -n communicator-%{version}
+%autosetup -p1 -n communicator-%{?snapshot:master}%{!?snapshot:%{version}}
 %cmake_kde5
 
 %build
