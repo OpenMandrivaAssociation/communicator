@@ -27,6 +27,7 @@ BuildRequires:	cmake(KF5People)
 BuildRequires:	cmake(KF5SyntaxHighlighting)
 BuildRequires:	cmake(Qt5WebEngine)
 BuildRequires:	cmake(PhoneNumber)
+BuildRequires:	cmake(MauiKitFileBrowsing)
 BuildRequires:	%{_lib}phonenumber-devel
 
 Provides:   contacts = %{version}-%{release}
