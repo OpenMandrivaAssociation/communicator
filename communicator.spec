@@ -50,8 +50,11 @@ Communicator management for Plasma Mobile
 %ninja_install -C build
 #sed -i -e 's,Icon=maui-communicator,Icon=communicator,g' %{buildroot}%{_datadir}/applications/org.maui.communicator.desktop
 
-%files
+%find_lang communicator
+
+%files -f communicator.lang
 %{_bindir}/communicator
 %{_datadir}/applications/org.kde.communicator.desktop
 %{_datadir}/icons/hicolor/scalable/apps/communicator.svg
 %{_datadir}/maui-accounts
+%{_datadir}/metainfo/org.kde.communicator.appdata.xml
