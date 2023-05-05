@@ -1,7 +1,7 @@
-%define snapshot 20220107
+#define snapshot 20220107
 
 Name:		communicator
-Version:	2.1.1
+Version:	2.2.2
 Release:	%{?snapshot:0.%{snapshot}.}1
 Source0:	https://invent.kde.org/maui/communicator/-/archive/%{?snapshot:master}%{!?snapshot:%{version}}/communicator-%{?snapshot:master}%{!?snapshot:%{version}}.tar.bz2%{?snapshot:#/communicator-%{snapshot}.tar.bz2}
 Group:		Applications/Productivity
@@ -19,11 +19,13 @@ BuildRequires:	cmake(Qt5Widgets)
 BuildRequires:	cmake(Qt5Concurrent)
 BuildRequires:	cmake(KF5I18n)
 BuildRequires:	cmake(KF5Notifications)
+BuildRequires:  cmake(KF5CoreAddons)
 BuildRequires:	cmake(KF5Config)
 BuildRequires:	cmake(KF5KIO)
 BuildRequires:	cmake(KF5Attica)
 BuildRequires:	cmake(KF5Contacts)
 BuildRequires:	cmake(KF5People)
+BuildRequires:  cmake(KF5Service)
 BuildRequires:	cmake(KF5SyntaxHighlighting)
 BuildRequires:	cmake(Qt5WebEngine)
 BuildRequires:	cmake(PhoneNumber)
