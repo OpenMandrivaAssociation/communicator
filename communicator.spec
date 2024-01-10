@@ -1,15 +1,16 @@
 #define snapshot 20220107
 
 Name:		communicator
-Version:	3.0.0
+Version:	3.0.2
 Release:	%{?snapshot:0.%{snapshot}.}1
+Url:      https://invent.kde.org/maui/communicator/
 Source0:	https://invent.kde.org/maui/communicator/-/archive/%{?snapshot:master}%{!?snapshot:v%{version}}/communicator-%{?snapshot:master}%{!?snapshot:v%{version}}.tar.bz2%{?snapshot:#/communicator-%{snapshot}.tar.bz2}
 Group:		Applications/Productivity
 Summary:	Communicator management for Plasma Mobile
 License:	GPLv3
 BuildRequires:	ninja
 BuildRequires:	cmake(ECM)
-BuildRequires:	cmake(MauiKit)
+BuildRequires:	cmake(MauiKit3)
 BuildRequires:	cmake(Qt5Qml)
 BuildRequires:	cmake(Qt5Quick)
 BuildRequires:	cmake(Qt5Sql)
@@ -29,7 +30,7 @@ BuildRequires:  cmake(KF5Service)
 BuildRequires:	cmake(KF5SyntaxHighlighting)
 BuildRequires:	cmake(Qt5WebEngine)
 BuildRequires:	cmake(PhoneNumber)
-BuildRequires:	cmake(MauiKitFileBrowsing)
+BuildRequires:	cmake(MauiKitFileBrowsing3)
 BuildRequires:	%{_lib}phonenumber-devel
 
 Provides:   contacts = %{version}-%{release}
