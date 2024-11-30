@@ -5,6 +5,7 @@ Version:	4.0.0
 Release:	%{?snapshot:0.%{snapshot}.}1
 Url:      https://invent.kde.org/maui/communicator/
 Source0:	https://invent.kde.org/maui/communicator/-/archive/%{?snapshot:master}%{!?snapshot:v%{version}}/maui-communicator-%{?snapshot:master}%{!?snapshot:v%{version}}.tar.bz2%{?snapshot:#/maui-communicator-%{snapshot}.tar.bz2}
+Patch0:   https://invent.kde.org/maui/maui-communicator/-/merge_requests/4.patch
 Group:		Applications/Productivity
 Summary:	Communicator management for Plasma Mobile
 License:	GPLv3
