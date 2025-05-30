@@ -1,7 +1,7 @@
 #define snapshot 20220107
 
 Name:		communicator
-Version:	4.0.1
+Version:	4.0.2
 Release:	%{?snapshot:0.%{snapshot}.}1
 Url:      https://invent.kde.org/maui/communicator/
 Source0:	https://invent.kde.org/maui/communicator/-/archive/%{?snapshot:master}%{!?snapshot:v%{version}}/maui-communicator-%{?snapshot:master}%{!?snapshot:v%{version}}.tar.bz2%{?snapshot:#/maui-communicator-%{snapshot}.tar.bz2}
